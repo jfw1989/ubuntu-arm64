@@ -3,11 +3,11 @@ LABEL maintainer="jfw-1989"
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN \
-    apt-get -y update && apt-get -y upgrade && \
-    apt-get -y install supervisor curl wget bzip2 locales tzdata --no-install-recommends && \
+    apt -y update && apt -y upgrade && \
+    apt -y install supervisor curl wget bzip2 locales tzdata --no-install-recommends && \
     locale-gen de_DE.utf8 && \
     update-locale LANG=de_DE.utf8 && \
-    apt-get -y clean && \
+    apt -y clean && \
     rm -rf /var/lib/apt/lists/*
 
 ENV \
